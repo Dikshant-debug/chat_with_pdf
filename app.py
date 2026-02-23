@@ -8,6 +8,7 @@ from langchain_community.vectorstores import Chroma
 from langchain.chains import RetrievalQA
 
 load_dotenv()
+os.environ["GOOGLE_API_KEY"] = st.secrets.get("GOOGLE_API_KEY", os.getenv("GOOGLE_API_KEY"))
 
 st.set_page_config(page_title="Chat with PDF", page_icon="📄")
 st.title("📄 Chat with your PDF")
